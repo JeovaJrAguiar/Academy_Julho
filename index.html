@@ -12,22 +12,37 @@
 
 <body>
     
-    <header>
-        <h1>Compra de Sapato</h1>
+    <header class="container">
+
+        <h1 id="titulo">Comprar Sapato</h1>
+
+        <fieldset>
+
+            
+
         <form >
-            <label for="nome">Nome</label>
-            <input type="text" name="Nome" id="nome" placeholder="Digite seu Nome">
 
-            <br>
-            <br>
+            <div class="inputElement">
 
-            <label for="email">Emeil</label>
-            <input type="email" name="email" id="email" placeholder="Digite seu Email">
+            <label for="nome">Nome:</label>
+            <input type="text" name="Nome" class="inputGeral" placeholder="Digite seu Nome">
 
-            <br>
-            <br>
+            </div>
+  
+            <br><br>
 
-            <label for="selecionarTamanho">Número do Sapato</label>
+            <div class="inputElement">
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" class="inputGeral" placeholder="Digite seu Email">
+    
+            </div>
+
+            <br><br>
+
+            <div class="inputElement">
+                
+            <label for="selecionarTamanho">Número do Sapato:</label>
             <select name="selecionarTamanho" id="selecionarTamanho">
                 <option value="35" selected>35</option>
                 <option value="36" >36</option>
@@ -40,40 +55,53 @@
                 <option value="43">43</option>
                 <option value="44" >44</option>
                 <option value="45">45</option>
-              </select>
+            </select>
 
-              <br>
-              <br>
+            </div>
 
-            <label for="presente">Seu pedido é para presente?</label>
-            <input type="checkbox" name="presente" id="presente" value="true">
+            <br><br>
 
-            <br>
-            <br>
+            <div class="inputElement">
 
-            <label for="Marca">Escolha a Marca do Sapato</label>
+                <label for="presente">Seu pedido é para presente?</label>
+                <input type="checkbox" name="presente" class="inputGeral" value="true">
+
+            </div>
+
+            <br><br>
+
+            <div class="inputElement">
+
+            <label for="Marca">Escolha a Marca do Sapato:</label>
             <select name="Marca" id="Marca">
-                <option value="Addidas" selected>Addidas</option>
-                <option value="Nike" >Nike</option>
+                <option value="Nike" selected>Nike</option>
+                <option value="Addidas" >Addidas</option>
                 <option value="Olimpikus">Olimpikus</option>
-              </select>
+            </select>
 
-              <br>
-              <br>
-            
-            <label for="Cor">Escolha a Cor do Sapato</label>
+            </div>
+
+            <br><br>
+
+            <div class="inputElement">
+
+            <label for="Cor">Escolha a Cor do Sapato:</label>
             <select name="Cor" id="Cor">
                 <option value="Verde" selected>Verde</option>
                 <option value="Vermelho" >Vermelho</option>
                 <option value="Amarelo">Amarelo</option>
             </select>
+                
+            </div>
 
-            <br>
-            <br>
+            <br><br>
 
-            <button>Enviar</button>
+            <button id="btnEnviar">Enviar</button>
 
         </form>
+
+        </fieldset>
+        
     </header>
     
 </body>
