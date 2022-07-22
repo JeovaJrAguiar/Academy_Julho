@@ -1,5 +1,5 @@
 body{
-    padding: 0;
+    padding: 15px;
     background-image: linear-gradient(to right,bisque,white);
 }
 
@@ -8,38 +8,7 @@ fieldset{
     border-radius: 8px;
 }
 
-.inputElement {
-    position: relative;
-
-    border: 3px solid rgb(12, 12, 36);
-    border-radius: 4px;
-    padding: 5px;
-}
-
-
-
-.inputGeral {
-    background: none;
-    border: none;
-    border-bottom: 1px solid white;
-    outline: none;
-    color: white;
-    letter-spacing: 1.2px;
-    position: relative;
-}
-
-.inputGeral::placeholder {
-    color: rgba(255, 255, 255, 0.452);
-}
-
-
-select {
-    background: white;
-    border: none;
-
-}
-
-.container {
+.container {        /* Container que engloba todo o form */
     position: absolute; 
     
     color: white;
@@ -50,10 +19,52 @@ select {
 
 }
 
+.inputDiv {         /* Div's que englobam os inputs e label's */
+    position: relative;
+
+    border: 3px solid rgb(12, 12, 36);
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.inputDiv:focus::placeholder {      /* Não Funcionou */
+    color: transparent;
+}
+
+
+
+.inputGeral {
+    background: none;
+
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+
+    color: white;
+    letter-spacing: 1.2px;
+
+    position: relative;
+}
+
+.inputGeral::placeholder {
+    color: rgba(255, 255, 255, 0.452);
+}
+
+
+select {
+
+    background: white;
+    border: none;
+
+}
+
+
 #titulo {
     text-align: center;
     font-size: 25px;
+
     position: static;
+
     padding: 10px;
     border: 3px solid rgb(12, 12, 36);
     border-radius: 8px;
@@ -61,8 +72,10 @@ select {
 
 #btnEnviar{
     background: wheat;
+
     width: 100%;
     padding: 15px;
+
     cursor: pointer;
     border-radius: 5px;
 }
