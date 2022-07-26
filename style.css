@@ -1,85 +1,49 @@
-body{
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background: #4b79a1;
+    background: -webkit-linear-gradient(to right, #283e51, #4b79a1);
+    background: linear-gradient(to right, #283e51, #4b79a1);
+  }
+  
+  #app {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    padding: 25px;
+    gap: 20px;
+  }
+  
+  .note {
+    height: 200px;
+    box-sizing: border-box;
     padding: 15px;
-    background-image: linear-gradient(to right,bisque,white);
-}
-
-fieldset{
-    border: 3px solid rgb(12, 12, 36);
-    border-radius: 8px;
-}
-
-.container {        /* Container que engloba todo o form */
-    position: absolute; 
-    
-    color: white;
-    background-color: rgba(30, 88, 150, 0.822);
-
-    padding: 10px;
-    border-radius: 15px;
-
-}
-
-.inputDiv {         /* Div's que englobam os inputs e label's */
-    position: relative;
-
-    border: 3px solid rgb(12, 12, 36);
-    border-radius: 4px;
-    padding: 5px;
-}
-
-.inputDiv:focus::placeholder {      /* Não Funcionou */
-    color: transparent;
-}
-
-
-
-.inputGeral {
-    background: none;
-
     border: none;
-    border-bottom: 1px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.842);
+    background: rgba(255, 255, 255, 0.644);
+    resize: none; /* remover a opção de resize */
+    font-size: 18px;
+  }
+  
+  .add-note {
+    height: 200px;
+    box-sizing: border-box;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
     outline: none;
-
-    color: white;
-    letter-spacing: 1.2px;
-
-    position: relative;
-}
-
-.inputGeral::placeholder {
-    color: rgba(255, 255, 255, 0.452);
-}
-
-
-select {
-
-    background: white;
-    border: none;
-
-}
-
-
-#titulo {
-    text-align: center;
-    font-size: 25px;
-
-    position: static;
-
-    padding: 10px;
-    border: 3px solid rgb(12, 12, 36);
-    border-radius: 8px;
-}
-
-#btnEnviar{
-    background: wheat;
-
-    width: 100%;
-    padding: 15px;
-
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.11);
+    background: rgba(0, 0, 0, 0.11);
+    color: rgba(0, 0, 0, 0.507);
+    font-size: 125px;
     cursor: pointer;
-    border-radius: 5px;
-}
-
-#btnEnviar:hover{
-    background: rgb(240, 203, 136);
-}
+    transition: background 0.2s;
+  }
+  
+  .add-note:hover {
+    background: rgba(0, 0, 0, 0.199);
+  }
+  
