@@ -1,51 +1,45 @@
-// querySelector retorna o primeiro elemento dentro do documento que corresponde ao grupo especificado de seletores.
-// no caso é o lista-produtos
-const listContainer = document.querySelector(".lista-produtos");
+const frutas = [
+  { name: "Laranja", count: 5 },
+  { name: "Banana", count: 2 },
+  { name: "Maçã", count: 9 },
+  { name: "Uva", count: 4 },
+  { name: "Goiaba", count: 5 },
+];
 
-const cardCount = 5;
-const productCardWidth = 220;
+const mincount = 6;
 
-// Math.floor arredonda (inteiro) pra baixo
-// getBoundingClientRect retorna o tamanho de um elemento e sua posição relativa ao viewport.
-function addHiddenCards() {
-  const cardsPerRow = Math.floor(
-    listContainer.getBoundingClientRect().width / productCardWidth
-  );
-  const cardsToAdd = cardsPerRow - (cardCount % cardsPerRow);
-
-  // !Usar tratamento de array no lugar de for
-  for (let i = 0; i < cardsToAdd; i++) {
-    const cardToAdd = document.createElement("div");
-    cardToAdd.classList.add("produto");
-    cardToAdd.classList.add("hidden");
-    listContainer.appendChild(cardToAdd);
+const frutasPertoDeAcabar = frutas.reduce((ac, item) => {
+  if (item.count < mincount) {
+    console.log(item.name);
   }
-}
+}, "");
 
-// querySelectorAll retorna uma lista de elementos presentes no documento que coincidam com o grupo de seletores especificado. 
-function removeHiddenCards() {
-  const hiddenCards = document.querySelectorAll(".hidden");
-  for (let i = 0; i < hiddenCards.length; i++) {
-    const hiddenCard = hiddenCards[i];
-    hiddenCard.remove();
+console.log(frutasPertoDeAcabar); 
+
+// ERRO: ESTÁ RETORNANDO UM UNDEFINED NO FINAL
+
+
+
+
+///     EXERCICIOS
+
+// Descobrir quantas pessoas são do signo de cancer
+const pessoas = [
+  { name: "Pedro", sign: "Gemeos" },
+  { name: "Lucas", sign: "Cancer" },
+  { name: "Andre", sign: "Cancer" },
+  { name: "Julio", sign: "Sargitario" },
+  { name: "Luma", sign: "Aries" },
+  { name: "Alvaro", sign: "Cancer" },
+  { name: "Leticia", sign: "Cancer" },
+  { name: "Juliana", sign: "Aquario" },
+];
+
+const cancer = pessoas.reduce((acc, { sign }) => {
+  if (sign === "Cancer") {
+    acc += 1;
   }
-}
+  return acc;
+}, 0);
 
-addHiddenCards();
-
-let timer;
-
-function resizeHandlerWithDebounce(debounceTime = 1000) {
-  if (timer) {
-    clearTimeout(timer);
-  }
-
-  timer = setTimeout(() => {
-    console.log("trigger");
-    removeHiddenCards();
-    addHiddenCards();
-    timer = null;
-  }, debounceTime);
-}
-
-window.onresize = () => resizeHandlerWithDebounce(5000);
+console.log(cancer);
