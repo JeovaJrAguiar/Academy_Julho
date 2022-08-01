@@ -16,5 +16,13 @@ function rem() {
   }
 }
 
+function addFruta(idSpanFruta){
+  const fruta = document.getElementById(idSpanFruta);
+
+  const constValor = +fruta.textContent;
+
+  fruta.innerText = constValor+1;
+}
+
 plus.addEventListener("click", add);
 minus.addEventListener("click", rem);
